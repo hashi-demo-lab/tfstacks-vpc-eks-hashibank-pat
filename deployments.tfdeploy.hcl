@@ -1,5 +1,5 @@
 identity_token "aws" {
-  audience = ["aws.workload.identity"]
+  audience = ["terraform-stacks-private-preview"]
 }
 
 
@@ -11,7 +11,7 @@ identity_token "k8s" {
 deployment "development" {
   inputs = {
     aws_identity_token = identity_token.aws.jwt
-    role_arn            = "arn:aws:iam::285942769742:role/hcp-oidc"
+    role_arn            = "arn:aws:iam::258850769742:role/hcp-oidc"
     regions             = ["us-east-2"]
     vpc_name = "vpc-brennan-dev1"
     vpc_cidr = "10.0.0.0/16"
@@ -24,7 +24,7 @@ deployment "development" {
     tfc_kubernetes_audience = "aws.workload.identity"
     tfc_hostname = "https://app.terraform.io"
     tfc_organization_name = "patrick-brennan-demo-org"
-    eks_clusteradmin_arn = "arn:aws:iam::285942769742:role/aws_patrick.brennan_test-developer"
+    eks_clusteradmin_arn = "arn:aws:iam::258850230659:role/aws_patrick.brennan_test-developer"
     eks_clusteradmin_username = "aws_patrick.brennan_test-developer"
 
     #K8S
