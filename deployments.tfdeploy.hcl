@@ -11,7 +11,7 @@ identity_token "k8s" {
 deployment "development" {
   inputs = {
     aws_identity_token = identity_token.aws.jwt
-    role_arn            = "arn:aws:iam::258850769742:role/hcp-oidc"
+    role_arn            = "arn:aws:iam::258850769742:role/tfstacks-role"
     regions             = ["us-east-2"]
     vpc_name = "vpc-brennan-dev1"
     vpc_cidr = "10.0.0.0/16"
@@ -39,7 +39,7 @@ deployment "development" {
 deployment "prod" {
   inputs = {
     aws_identity_token = identity_token.aws.jwt
-    role_arn            = "arn:aws:iam::285942769742:role/hcp-oidc"
+    role_arn            = "arn:aws:iam::285942769742:role/tfstacks-role"
     regions             = ["us-east-1"]
     vpc_name = "vpc-brennan-prod1"
     vpc_cidr = "10.20.0.0/16"
